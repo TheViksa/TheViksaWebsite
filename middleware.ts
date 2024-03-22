@@ -10,26 +10,6 @@ export default createMiddleware({
     // If all locales use the same pathname, a single
     // external path can be used for all locales.
     "/": "/",
-    "/blog": "/blog",
-
-    // If locales use different paths, you can
-    // specify each external path per locale.
-    "/o-nama": {
-      hr: "/o-nama",
-      en: "/about",
-    },
-    "/kontakt": {
-      hr: "/kontakt",
-      en: "/contact",
-    },
-    "/pravne-usluge": {
-      hr: "/pravne-usluge",
-      en: "/legal-services",
-    },
-    "/nas-tim": {
-      hr: "/nas-tim",
-      en: "/our-team",
-    },
   },
 });
 
