@@ -7,12 +7,12 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(79).fill(1);
   const cols = new Array(63).fill(1);
   let colors = [
-    "123,123,13,.04",
-    "193,13,13,.04",
-    "15,223,13,.04",
-    "217,162,255,.04",
-    "251,181,255,.04",
-    "162,206,255,.04",
+    "123,123,13,.1",
+    "193,13,13,.1",
+    "15,223,13,.1",
+    "217,162,255,.1",
+    "251,181,255,.1",
+    "162,206,255,.1",
   ];
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
@@ -32,7 +32,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-green-400/10 relative"
+          className="w-16 h-8  border-l  border-accent/10  relative"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -44,7 +44,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-400/40 relative "
+              className="w-16 h-8  border-r border-t border-accent/10 relative "
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
