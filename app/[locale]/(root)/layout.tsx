@@ -1,3 +1,5 @@
+import { ContactBanner } from "@/components/ContactBanner";
+import { Navigation } from "@/components/Navigation";
 import { BoxesCore } from "@/components/ui/background-boxes";
 import React from "react";
 interface IRootLayout {
@@ -6,11 +8,13 @@ interface IRootLayout {
 const RootLayout = ({ children }: IRootLayout) => {
   return (
     <div className="relative">
-      <div>InfoBanner</div>
-      <div>Navigation</div>
-      <div className=" container relative z-20">
+      <div className="max-md:hidden">
+        <ContactBanner />
+      </div>
+      <Navigation />
+      <div className=" container relative ">
         {children}
-        <div className="fixed left-0 top-0 h-screen w-full overflow-hidden z-10">
+        <div className="max-md:hidden fixed left-0 top-0 h-screen w-full overflow-hidden z-10">
           <BoxesCore />
         </div>
       </div>

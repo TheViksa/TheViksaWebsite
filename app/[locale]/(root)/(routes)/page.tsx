@@ -4,12 +4,12 @@ import { useTranslations } from "next-intl";
 export default function HomePage() {
   const t = useTranslations("Index");
   return (
-    <main>
+    <main className="pt-10">
       <div>
         <HeroSection />
         <div className="h-screen ">
           <div>
-            <p className="z-text">TEXT</p>
+            <p className="z-priority">TEXT</p>
           </div>
         </div>
         <div className="h-screen ">somethijng</div>
