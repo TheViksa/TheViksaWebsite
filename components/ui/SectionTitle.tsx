@@ -1,7 +1,11 @@
 import React from "react";
 import { Rubik_Scribble } from "next/font/google";
 import { cn } from "@/lib/utils";
-const font = Rubik_Scribble({ subsets: ["latin"], weight: ["400"] });
+const font = Rubik_Scribble({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 export const SectionTitle = ({ title }: { title: string }) => {
   return (
     <p
