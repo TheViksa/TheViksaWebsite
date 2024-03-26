@@ -1,4 +1,5 @@
 import { ContactBanner } from "@/components/ContactBanner";
+import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { BoxesCore } from "@/components/ui/background-boxes";
 import React from "react";
@@ -18,6 +19,8 @@ const RootLayout = ({ children }: IRootLayout) => {
           <BoxesCore />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

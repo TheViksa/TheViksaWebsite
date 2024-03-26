@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 
 export const CONTACT_DATA = {
   phone: {
@@ -59,3 +59,18 @@ export const NAV_PATHS = {
     },
   ],
 };
+
+export const FOOTER_SOCIAL_ICONS = [
+  {
+    id: 1,
+    name: "facebook",
+    href: "#",
+    Icon: Facebook,
+  },
+  {
+    id: 1,
+    name: "instagram",
+    href: "#",
+    Icon: Instagram,
+  },
+];
