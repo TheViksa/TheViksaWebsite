@@ -1,4 +1,4 @@
-import { AboutUsSection } from "@/components/HomePageComponents/AboutUsSection";
+import { AboutHouseSection } from "@/components/HomePageComponents/AboutHouseSection";
 import { ChooseOccasion } from "@/components/HomePageComponents/ChooseOccasion";
 import { HeroSection } from "@/components/HomePageComponents/HeroSection";
 import { useTranslations } from "next-intl";
@@ -11,7 +11,7 @@ export default function HomePage() {
         <HeroSection />
       </div>
       <div className="">
-        <AboutUsSection />
+        <AboutHouseSection />
       </div>
       <div className="">
         <ChooseOccasion />

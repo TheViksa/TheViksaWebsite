@@ -40,7 +40,7 @@ const PRIGODE = [
 export const ChooseOccasion = () => {
   return (
     <div className="relative pt-[50px]  md:pt-[100px]">
-      <SectionTitle title="Prigoda" />
+      <SectionTitle title="Idealno Za" />
       <div className="flex justify-center items-center">
         <div className=" grid md:grid-cols-2 items-center justify-around gap-y-[40px] gap-x-[200px]">
           {PRIGODE.map((item) => {

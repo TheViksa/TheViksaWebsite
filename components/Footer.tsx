@@ -7,10 +7,10 @@ import { FOOTER_SOCIAL_ICONS, NAV_PATHS } from "@/static";
 //TODO srediti linkove leagal, dodati intl
 export const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 z-priority">
+    <footer className="max-md:bg-slate-100/40  bg-white dark:bg-gray-900 z-priority">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6 md:mb-0 max-md:hidden">
             <Link href="/" className="flex items-center">
               <Image
                 src="/assets/images/logo.png"
@@ -80,15 +80,15 @@ export const Footer = () => {
           </div>
         </div>
         <hr className="my-6 border-accent/50 sm:mx-auto  lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 z-priority">
+        <div className="flex items-center justify-between ">
+          <span className="text-sm text-gray-500 sm:text-center flex  items-center z-priority">
             © 2024{" "}
             <a href="https://flowbite.com/" className="hover:underline">
               The Viksa™
             </a>
             . All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0 z-priority gap-4">
+          <div className="flex  items-center justify-center sm:mt-0 z-priority gap-4">
             {FOOTER_SOCIAL_ICONS.map((item) => {
               return (
                 <SocialIcon
