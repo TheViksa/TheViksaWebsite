@@ -58,7 +58,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "absolute h-full w-full left-0 top-0  z-10 cursor-pointer",
+          "absolute h-full w-full left-0 top-0  z-10 cursor-pointer ",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}
@@ -74,9 +74,10 @@ const BlurImage = ({ card }: { card: Card }) => {
       src={card.thumbnail}
       height="500"
       width="500"
+      loading="eager"
       onLoad={() => setLoaded(true)}
       className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
+        "object-cover object-top absolute inset-0 h-full w-full transition duration-200 hover:scale-110",
         loaded ? "blur-none" : "blur-md"
       )}
       alt="thumbnail"

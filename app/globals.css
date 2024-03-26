@@ -65,7 +65,11 @@
     --ring: 0 0% 83.1%;
   }
 }
-p {
+p,
+h1,
+h2,
+h3,
+h4 {
   position: relative;
   z-index: 20;
 }
