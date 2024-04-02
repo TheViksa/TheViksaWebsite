@@ -5,11 +5,13 @@ export const CONTACT_DATA = {
     value: "+38501566324",
     label: "+385 01-566-324",
     icon: Phone,
+    aPrefix: "tel:",
   },
   email: {
     label: "contact@gmail.com",
     value: "contact@gmail.com",
     icon: Mail,
+    aPrefix: "mailto:",
   },
 };
 

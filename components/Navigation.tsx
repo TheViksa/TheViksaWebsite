@@ -36,7 +36,7 @@ export const Navigation = () => {
             return (
               <li key={item.id}>
                 <Link
-                  href={item.path}
+                  href={`/${localLang}/${item.path}`}
                   className={cn(
                     "text-lg uppercase font-sansSerif hover:text-accent transition",
                     pathName === `/${localLang}/${item.path}` && "text-accent"
