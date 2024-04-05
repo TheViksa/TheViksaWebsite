@@ -23,7 +23,7 @@ export default async function HomePage() {
         <AboutHouseSection />
       </div>
       <div className="">
-        <ChooseOccasion />
+        <ChooseOccasion data={serviceData} />
       </div>
       <div>
         <ContactSection />

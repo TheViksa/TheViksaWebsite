@@ -1,19 +1,17 @@
 "use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { NAV_PATHS } from "@/static";
 import { useLocale } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import { usePathname } from "next/navigation";
 import { MobileNavigation } from "./MobileNavigation";
 
 export const Navigation = () => {
-  const router = useRouter();
   const localLang = useLocale();
   const pathName = usePathname();
-  console.log(pathName);
-  console.log(localLang);
+
   return (
     <div className="container flex justify-between items-center relative">
       <div className="z-20">

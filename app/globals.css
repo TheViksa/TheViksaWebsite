@@ -85,4 +85,69 @@ h4 {
   .z-priority {
     @apply relative z-20;
   }
+  /* SERVICES DESCRIPTION COMPONENTS */
+
+  .article-split {
+    @apply flex flex-col  lg:flex-row;
+  }
+  .article-split-text {
+    @apply flex-1 p-[20px];
+  }
+  .article-split-media {
+    @apply flex-1 w-full;
+  }
+  .article-image-split-container {
+    @apply h-full;
+  }
+  .article-image-split {
+    @apply w-full h-full object-cover;
+  }
+  .article-main-title-container {
+    @apply flex flex-col gap-[15px] mb-[20px];
+  }
+
+  .list-title {
+    @apply text-bodyMMobile font-semibold flex flex-col gap-[20px] mb-[20px];
+  }
+  .list-title-big {
+    @apply text-headingSMobile lg:text-headingS  flex flex-col gap-[20px] mb-[20px];
+  }
+  .article-list-disc {
+    @apply list-disc pl-[20px] pb-[10px] text-bodyMMobile md:text-bodyM;
+  }
+
+  .article-list-item {
+    @apply flex justify-start gap-[10px] mb-[10px]  pb-[10px] border-b-[1px] max-sm:last-of-type:border-none;
+  }
+  .article-h1 {
+    @apply text-headingLMobile lg:text-headingL;
+  }
+  .article-h1-subtitle {
+    @apply text-headingS;
+  }
+  .article-h2 {
+    @apply text-headingMMobile md:text-headingM mt-[40px] mb-[20px] uppercase border-b-[1px] border-accent/20 font-bold;
+  }
+  .article-h3 {
+    @apply text-headingSMobile md:text-headingS mb-[10px] mt-[24px] font-bold;
+  }
+  .article-h4 {
+    @apply font-bold mt-[15px] mb-[5px];
+  }
+  .article-p {
+    @apply mb-[12px] text-bodyMMobile md:text-bodyM;
+  }
+
+  .article-emphesise {
+    @apply font-bold;
+  }
+  .article-text-link {
+    @apply text-secondary hover:text-primary transition-all duration-200 cursor-pointer;
+  }
+  .article-video {
+    @apply w-[80%] mx-auto mb-[30px];
+  }
+  .article-video-full {
+    @apply mx-auto;
+  }
 }

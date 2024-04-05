@@ -6,8 +6,15 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "title",
+      name: "hr_title",
       title: "Ime Usluge",
+      type: "string",
+      validation: (rule) =>
+        rule.required().error("Daj ime usluge. Mozeš ti to 💪."),
+    }),
+    defineField({
+      name: "en_title",
+      title: "[Eng] Ime Usluge",
       type: "string",
       validation: (rule) =>
         rule.required().error("Daj ime usluge. Mozeš ti to 💪."),
@@ -23,8 +30,20 @@ export default defineType({
       validation: (rule) => rule.required().error("Slug vrlo bitan."),
     }),
     defineField({
-      name: "description",
+      name: "hr_description",
       title: "Opis",
+      type: "text",
+      validation: (rule) => [
+        rule
+          .required()
+          .min(20)
+          .error("Nemoj škrtariti na opisu, min 20 riječi."),
+        rule.max(300).warning("Brate pretjerao si, do 300 riječi."),
+      ],
+    }),
+    defineField({
+      name: "en_description",
+      title: "[Eng] Opis",
       type: "text",
       validation: (rule) => [
         rule
@@ -50,8 +69,17 @@ export default defineType({
       ],
     }),
     defineField({
-      name: "body",
+      name: "hr_body",
       title: "Blog tekst",
+      type: "blockContent",
+      validation: (rule) =>
+        rule
+          .required()
+          .error("Opis usluge, šta se nudi od kada do kada i tako to."),
+    }),
+    defineField({
+      name: "en_body",
+      title: "[Eng] Blog tekst",
       type: "blockContent",
       validation: (rule) =>
         rule
@@ -62,13 +90,8 @@ export default defineType({
 
   preview: {
     select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
+      title: "hr_title",
+      media: "image",
     },
   },
 });
