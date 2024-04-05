@@ -21,6 +21,7 @@ import { CalendarIcon } from "lucide-react";
 import { Calendar } from "../ui/calendar";
 import { DateRange } from "react-day-picker";
 import { Textarea } from "../ui/textarea";
+import { useToast } from "../ui/use-toast";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required." }).max(50),
   email: z.string().min(2, { message: "Email is required" }).max(50),
@@ -31,6 +32,7 @@ const formSchema = z.object({
   message: z.string().min(2, { message: "Message is required." }),
 });
 export const ContactForm = () => {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,9 +48,22 @@ export const ContactForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+
     try {
-    } catch (error) {}
+      //TESTING ERROR STATE , REMOVE
+      if (values.name === "error") {
+        throw new Error("bla");
+      }
+      toast({
+        description: "Poruka poslana. 🙂",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        description: "Nešto je pošlo po krivom.Pokušajte ponovo.",
+        variant: "destructive",
+      });
+    }
   }
   return (
     <Form {...form}>
