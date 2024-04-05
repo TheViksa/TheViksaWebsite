@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Zilla_Slab } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 const sansSerif = Inter({ subsets: ["latin"], variable: "--font-sans-serif" });
 const serif = Zilla_Slab({
@@ -25,6 +26,7 @@ export default function RootLayout({
         className={cn(" font-sans-serif", sansSerif.variable, serif.variable)}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
