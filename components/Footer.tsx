@@ -15,8 +15,8 @@ export const Footer = () => {
               <Image
                 src="/assets/images/logo.png"
                 className=" object-contain"
-                width={130}
-                height={110}
+                width={300}
+                height={140}
                 alt="The Viksa Logo"
               />
             </Link>
