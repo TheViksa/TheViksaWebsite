@@ -18,8 +18,8 @@ export const Navigation = () => {
         <Link href="/" className="z-priority cursor-pointer">
           <Image
             src={"/assets/images/logo.png"}
-            width={130}
-            height={100}
+            width={200}
+            height={80}
             alt="logo"
             className="relative z-20 object-contain"
           />

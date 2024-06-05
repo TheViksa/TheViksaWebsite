@@ -24,8 +24,8 @@ const MobileNavigationContent = () => {
       <div className="absolute left-4 top-[-20px]">
         <Image
           src="/assets/images/logo.png"
-          width={100}
-          height={80}
+          width={150}
+          height={60}
           alt="The Viksa logo"
         />
       </div>
