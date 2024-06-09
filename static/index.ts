@@ -2,14 +2,14 @@ import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { v4 as uuid } from "uuid";
 export const CONTACT_DATA = {
   phone: {
-    value: "+38501566324",
-    label: "+385 01-566-324",
+    value: "+385958905561",
+    label: "+385 0958905561",
     icon: Phone,
     aPrefix: "tel:",
   },
   email: {
-    label: "contact@gmail.com",
-    value: "contact@gmail.com",
+    label: "thevixahouse@gmail.com",
+    value: "thevixahouse@gmail.com",
     icon: Mail,
     aPrefix: "mailto:",
   },
