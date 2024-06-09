@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { addDays, format } from "date-fns";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -45,7 +46,7 @@ export const ContactForm = () => {
       message: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
 
@@ -54,6 +55,7 @@ export const ContactForm = () => {
       if (values.name === "error") {
         throw new Error("bla");
       }
+      await axios.post("/api/mail", { ...values });
       toast({
         description: "Poruka poslana. 🙂",
       });
