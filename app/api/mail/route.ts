@@ -63,6 +63,9 @@ export const POST = async (req: Request, res: Response) => {
           <p><strong>Ime:</strong> ${name}</p>
       </div>
       <div class="email-message">
+      
+      <p><strong>Zeljeni Datum:</strong></p>
+        <p>${date.from ? date.from : ""} - ${date.to ? date.to : ""}</p>
           <p><strong>Poruka:</strong></p>
           <p>${message}</p>
       </div>
