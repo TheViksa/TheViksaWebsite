@@ -8,6 +8,7 @@ const KontaktPage = () => {
       <div>
         <ContactSection />
       </div>
+      <h1 className="text-center text-3xl">Lokacija</h1>
       <GMapsLocation />
     </main>
   );
