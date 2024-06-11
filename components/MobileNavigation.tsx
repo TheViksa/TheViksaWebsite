@@ -5,6 +5,8 @@ import { NAV_PATHS } from "@/static";
 import Link from "next/link";
 import Image from "next/image";
 
+import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 export const MobileNavigation = () => {
   return (
     <Sheet>
@@ -19,6 +21,8 @@ export const MobileNavigation = () => {
 };
 
 const MobileNavigationContent = () => {
+  const localLang = useLocale();
+  const pathName = usePathname();
   return (
     <div className="w-full pt-[100px] relative">
       <div className="absolute left-4 top-[-20px]">
@@ -34,7 +38,10 @@ const MobileNavigationContent = () => {
           return (
             <li key={item.id}>
               <SheetClose asChild>
-                <Link href={item.path} className="text-2xl uppercase">
+                <Link
+                  href={`/${localLang}/${item.path}`}
+                  className="text-2xl uppercase"
+                >
                   {item.label}
                 </Link>
               </SheetClose>

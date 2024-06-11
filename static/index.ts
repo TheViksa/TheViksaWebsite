@@ -79,20 +79,122 @@ export const FOOTER_SOCIAL_ICONS = [
 export const ABOUT_HOUSE_INFO_POINTS = [
   {
     id: uuid(),
-    img: "https://images.unsplash.com/photo-1521782462922-9318be1cfd04?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/assets/images/5.jpg",
     title: "Udobnost i Luksuz",
     text: "Svaki kutak ove kuće ispunjen je udobnošću i luksuzom. Prostrani dnevni boravak s udobnim kaučem i toplim kaminom poziva vas na opuštanje, dok moderno opremljena kuhinja omogućuje pripremu ukusnih obroka za vaše najdraže. Elegantno uređene spavaće sobe pružaju miran san, dok prostrane terase i vrt nude prekrasan pogled na okolnu prirodu.",
   },
   {
     id: uuid(),
-    img: "https://images.unsplash.com/photo-1509600110300-21b9d5fedeb7?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/assets/images/15.jpg",
     title: "Spoj Tradicije i Moderne",
     text: "Naša vikendica savršeno spaja tradicionalni šarm s modernim udobnostima. Rustikalni drveni elementi kombiniraju se s elegantnim detaljima kako bi stvorili atmosferu koja je istovremeno opuštajuća i luksuzna. Svaki kutak ove kuće priča priču o ljubavi prema detaljima i pažljivoj pažnji prema udobnosti gostiju.",
   },
   {
     id: uuid(),
-    img: "https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/assets/images/17.jpg",
     title: "Prostrani Vanjski Prostor",
     text: "Uživajte u blagodatima prirode na našem prostranom vanjskom prostoru. Velika terasa s udobnim sjedećim garniturama idealna je za opuštanje uz jutarnju kavu ili večernje druženje s prijateljima. Okušajte se u roštiljanju na otvorenom ili organizirajte piknik na travnjaku, dok se djeca mogu igrati slobodno na sigurnom i prostranom dvorištu.",
+  },
+];
+
+export const HERO_GRID_IMGS = [
+  {
+    id: 1,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/2.jpg",
+  },
+  {
+    id: 2,
+    content: "",
+    className: "col-span-1",
+    thumbnail: "/assets/images/4.jpg",
+  },
+  {
+    id: 3,
+    content: "",
+    className: "col-span-1",
+    thumbnail: "/assets/images/8.jpg",
+  },
+  {
+    id: 4,
+    content: "",
+    className: "md:col-span-2",
+    thumbnail: "/assets/images/17.jpg",
+  },
+];
+
+export const HOUSE_GALLERY_IMGS = [
+  {
+    id: 1,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/1.jpg",
+  },
+  {
+    id: 2,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/2.jpg",
+  },
+  {
+    id: 3,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/3.jpg",
+  },
+  {
+    id: 4,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/4.jpg",
+  },
+  {
+    id: 5,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/5.jpg",
+  },
+  {
+    id: 6,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/6.jpg",
+  },
+  {
+    id: 7,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/7.jpg",
+  },
+  {
+    id: 8,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/8.jpg",
+  },
+  {
+    id: 9,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/15.jpg",
+  },
+  {
+    id: 10,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/11.jpg",
+  },
+  {
+    id: 11,
+    content: "",
+    className: "md:col-span-1  ",
+    thumbnail: "/assets/images/17.jpg",
+  },
+  {
+    id: 12,
+    content: "",
+    className: "md:col-span-2  ",
+    thumbnail: "/assets/images/16.jpg",
   },
 ];

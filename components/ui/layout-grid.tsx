@@ -38,7 +38,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               card.className,
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0  w-full  m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer absolute inset-1 h-full   m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
@@ -51,7 +51,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
                 handleOutClick={handleOutsideClick}
               />
             )}
-            <BlurImage card={card} />
+
+            <BlurImage card={card} contain={selected?.id === card.id} />
           </motion.div>
         </div>
       ))}
@@ -67,18 +68,19 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   );
 };
 
-const BlurImage = ({ card }: { card: Card }) => {
+const BlurImage = ({ card, contain }: { card: Card; contain: boolean }) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <Image
       src={card.thumbnail}
-      height="500"
-      width="500"
+      height="800"
+      width="800"
       loading="eager"
       onLoad={() => setLoaded(true)}
       className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200 hover:scale-110",
-        loaded ? "blur-none" : "blur-md"
+        "  absolute inset-0 h-full w-full transition duration-200 hover:scale-110",
+        loaded ? "blur-none" : "blur-md",
+        contain ? "object-contain" : "object-cover"
       )}
       alt="thumbnail"
     />

@@ -21,7 +21,7 @@ export const HouseDescription = () => {
       </div>
       <div className="md:flex-1 h-[250px] md:h-[400px]  relative ">
         <Image
-          src="https://images.unsplash.com/photo-1560184897-ae75f418493e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/assets/images/15.jpg"
           fill
           alt="the viksa house"
           className="object-contain w-full"
