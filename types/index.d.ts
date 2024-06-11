@@ -22,3 +22,10 @@ interface IServiceData {
   hr_body: any;
   slug: { current: string; _type: string };
 }
+
+interface IGridImg {
+  id: number;
+  content: string;
+  className: string;
+  thumbnail: string;
+}

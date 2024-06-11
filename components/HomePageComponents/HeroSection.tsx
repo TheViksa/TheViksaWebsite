@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroGridImages } from "./HeroGridImages";
 import { TypewriterEffect } from "../ui/typewriter-effect";
+import { HERO_GRID_IMGS } from "@/static";
 const textTypewriterStyle =
   "md:text-left text-4xl lg:text-5xl lg:leading-[100px]";
 const words = [
@@ -47,7 +48,7 @@ export const HeroSection = () => {
         </p>
       </div>
       <div className="h-[400px] lg:h-[600px] lg:flex-1 w-full relative   z-20">
-        <HeroGridImages />
+        <HeroGridImages cards={HERO_GRID_IMGS} />
       </div>
     </div>
   );

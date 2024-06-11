@@ -5,6 +5,7 @@ import { ContactSection } from "@/components/HomePageComponents/ContactSection";
 import { HeroGridImages } from "@/components/HomePageComponents/HeroGridImages";
 import { SwipeCarousel } from "@/components/SwipeCarousel";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { HOUSE_GALLERY_IMGS } from "@/static";
 import React from "react";
 
 const OKuciPage = () => {
@@ -17,7 +18,7 @@ const OKuciPage = () => {
 
       <div className="relative z-priority w-full h-screen pt-[80px]">
         <SectionTitle title="Galerija" />
-        <HeroGridImages />
+        <HeroGridImages cards={HOUSE_GALLERY_IMGS} />
       </div>
       <div className="relative  pt-[120px]">
         <SectionTitle title="Lokacija" />
