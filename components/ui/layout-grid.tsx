@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type Card = {
-  id: number;
+  id: string;
   content: JSX.Element | React.ReactNode | string;
   className: string;
   thumbnail: string;
@@ -27,35 +27,44 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     setLastSelected(null);
     setSelected(null);
   };
-
   return (
     <div className="w-full h-full md:p-10 grid grid-cols-2 md:grid-cols-3  max-w-7xl mx-auto gap-2 md:gap-4 ">
-      {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "cursor-pointer")}>
-          <motion.div
-            onClick={() => handleClick(card)}
+      {cards.map((card, i) => {
+        const boxGrid = card.className;
+        return (
+          <div
+            key={i}
             className={cn(
-              card.className,
-              "relative overflow-hidden",
-              selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-1 h-full   m-auto z-50 flex justify-center items-center flex-wrap flex-col"
-                : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl h-full w-full"
-                : "bg-white rounded-xl h-full w-full"
+              "cursor-pointer",
+              boxGrid === "md:col-span-2" ? "md:col-span-2" : "col-span-1"
             )}
-            layout
           >
-            {selected?.id === card.id && (
-              <SelectedCard
-                selected={selected}
-                handleOutClick={handleOutsideClick}
-              />
-            )}
+            <motion.div
+              onClick={() => handleClick(card)}
+              className={cn(
+                card.className,
+                "relative overflow-hidden",
+                selected?.id === card.id
+                  ? "rounded-lg cursor-pointer absolute inset-0 h-full w-full  m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                  : lastSelected?.id === card.id
+                  ? "z-40 bg-white rounded-xl h-full w-full"
+                  : "bg-white rounded-xl h-full w-full"
+              )}
+              layout
+            >
+              {selected?.id === card.id && (
+                <SelectedCard
+                  selected={selected}
+                  handleOutClick={handleOutsideClick}
+                />
+              )}
 
-            <BlurImage card={card} contain={selected?.id === card.id} />
-          </motion.div>
-        </div>
-      ))}
+              <BlurImage card={card} contain={selected?.id === card.id} />
+            </motion.div>
+          </div>
+        );
+      })}
+
       <motion.div
         onClick={handleOutsideClick}
         className={cn(

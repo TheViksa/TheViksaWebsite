@@ -24,7 +24,7 @@ interface IServiceData {
 }
 
 interface IGridImg {
-  id: number;
+  id: string;
   content: string;
   className: string;
   thumbnail: string;
