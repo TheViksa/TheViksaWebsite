@@ -115,7 +115,7 @@ export const ContactForm = () => {
           render={({ field }) => (
             <FormItem className="flex flex-col">
               <FormLabel className="text-xl">
-                Datum Zeljene Rezervacije
+                Datum željene rezervacije
               </FormLabel>
               <Popover>
                 <PopoverTrigger asChild>

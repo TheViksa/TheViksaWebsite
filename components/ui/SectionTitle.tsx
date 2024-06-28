@@ -10,8 +10,7 @@ export const SectionTitle = ({ title }: { title: string }) => {
   return (
     <p
       className={cn(
-        "absolute left-[-16px] top-[-30px] text-[80px] md:text-[100px] lg:text-[150px] text-accent/30 uppercase z-0 ",
-        font.className
+        "absolute left-[-16px] top-[-70px] text-[80px] md:text-[100px] lg:text-[150px] text-accent/50 uppercase z-0 "
       )}
     >
       {title}
