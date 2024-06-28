@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 export const CONTACT_DATA = {
   phone: {
     value: "+385958905561",
-    label: "+385 0958905561",
+    label: "+385 958905561",
     icon: Phone,
     aPrefix: "tel:",
   },
@@ -66,13 +66,13 @@ export const FOOTER_SOCIAL_ICONS = [
   {
     id: uuid(),
     name: "facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61555660566331",
     Icon: Facebook,
   },
   {
     id: uuid(),
     name: "instagram",
-    href: "#",
+    href: "https://www.instagram.com/the__vixa/",
     Icon: Instagram,
   },
 ];

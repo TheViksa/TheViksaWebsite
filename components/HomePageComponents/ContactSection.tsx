@@ -27,7 +27,7 @@ export const ContactSection = () => {
         <div className="flex  flex-col items-center gap-4  w-full">
           <WelcomeIllustration className="max-h-[600px] max-w-[600px] w-full h-full" />
 
-          <div className="flex gap-6">
+          <div className="flex gap-6 max-md:flex-col">
             <ContactLink data={email} />
             <ContactLink data={phone} />
           </div>

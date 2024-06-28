@@ -28,7 +28,7 @@ const words = [
   },
 
   {
-    text: "Nezaboravni.",
+    text: "nezaboravni.",
     className: textTypewriterStyle + " text-accent leading-[100px]",
   },
 ];
@@ -41,10 +41,10 @@ export const HeroSection = () => {
         </div>
 
         <p>
-          Dobrodošli u &quot;The Viksa&quot; - vašu oazu za nezaboravne proslave
+          Dobrodošli u &quot;The Vixa&quot; - vašu oazu za nezaboravne proslave
           i opuštajuće obiteljske odmore. Smještena u idiličnom okruženju, naša
-          vikendica pruža savršen spoj udobnosti, elegancije i prirodnog
-          ljepotom, čineći je idealnim odredištem za sve vaše posebne prigode.
+          vikendica pruža savršen spoj udobnosti, elegancije i prirodne ljepote,
+          čineći je idealnim odredištem za sve vaše posebne prigode.
         </p>
       </div>
       <div className="h-[400px] lg:h-[600px] lg:flex-1 w-full relative   z-20">
