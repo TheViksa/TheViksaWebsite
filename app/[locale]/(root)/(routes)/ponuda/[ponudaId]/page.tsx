@@ -12,7 +12,11 @@ import { Ponuda } from "@/components/PonudaPageComponents/Ponuda";
 import { ContactSection } from "@/components/HomePageComponents/ContactSection";
 export async function generateStaticParams() {
   // Important, use the plain Sanity Client here
-  const posts = await client.fetch(servicesPathsQuery);
+  const posts = await client.fetch(servicesPathsQuery, [], {
+    next: {
+      revalidate: 120,
+    },
+  });
 
   return posts;
 }
