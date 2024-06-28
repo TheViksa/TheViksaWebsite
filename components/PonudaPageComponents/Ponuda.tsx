@@ -8,7 +8,7 @@ import { client } from "@/sanity/lib/client";
 const builder = imageUrlBuilder(client);
 export const Ponuda = ({ data }: { data: IServiceData }) => {
   const { en_title, hr_title, image, en_body, hr_body } = data;
-  console.log(data);
+  const imgUrl = builder.image(data.image).width(440).height(220).url();
   return (
     <article className="flex flex-col gap-[20px]">
       <div className="w-full h-[300px] lg:h-[600px] relative">
