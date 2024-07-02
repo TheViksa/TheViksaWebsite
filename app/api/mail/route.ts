@@ -1,18 +1,11 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { format } from "date-fns";
 export const POST = async (req: Request, res: Response) => {
-  /*  try {
-    const data = await req.json();
-    console.log(data);
-
-    return NextResponse.json({ success: true, message: data });
-  } catch (err) {
-    return new NextResponse("Something went wrong", { status: 500 });
-  } */
   try {
     const data = await req.json();
-    const { name, email, date, message } = data;
-    console.log(data);
+    const { name, email, date, message, numberOfPeople, occasion } = data;
+
     const transporter = nodemailer.createTransport({
       host: "live.smtp.mailtrap.io",
       port: 587,
@@ -63,9 +56,14 @@ export const POST = async (req: Request, res: Response) => {
           <p><strong>Ime:</strong> ${name}</p>
       </div>
       <div class="email-message">
-      
+      <p><strong>Broj Osoba:</strong></p>
+      <p>${numberOfPeople}</p>
+      <p><strong>Vrsta Eventa:</strong></p>
+      <p>${occasion}</p>
       <p><strong>Zeljeni Datum:</strong></p>
-        <p>${date.from ? date.from : ""} - ${date.to ? date.to : ""}</p>
+        <p>${date.from ? `od ${format(date.from, "dd-MM-yyyy")} ` : ""} - ${
+      date.to ? `do ${format(date.to, "dd-MM-yyyy")}` : ""
+    }</p>
           <p><strong>Poruka:</strong></p>
           <p>${message}</p>
       </div>

@@ -60,7 +60,7 @@ export const Footer = () => {
                 })}
               </ul>
             </div>
-            <div>
+            {/*  <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Legal
               </h2>
@@ -76,7 +76,7 @@ export const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <hr className="my-6 border-accent/50 sm:mx-auto  lg:my-8" />

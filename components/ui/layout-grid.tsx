@@ -23,7 +23,6 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   const handleOutsideClick = () => {
-    console.log("Click");
     setLastSelected(null);
     setSelected(null);
   };

@@ -25,9 +25,8 @@ const PonudaIdPage = async ({
 }: {
   params: { locale: string; ponudaId: string };
 }) => {
-  console.log(params);
   const serviceData = await client.fetch(buildServiceQuery(params.ponudaId));
-  console.log(serviceData);
+ 
   return (
     <div className="pt-10 space-y-[80px] pb-10">
       <Ponuda data={serviceData} />
