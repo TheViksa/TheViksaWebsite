@@ -23,13 +23,26 @@ import { Calendar } from "../ui/calendar";
 import { DateRange } from "react-day-picker";
 import { Textarea } from "../ui/textarea";
 import { useToast } from "../ui/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { SubmitingAnimation } from "../svgs/submitingAnimation";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required." }).max(50),
-  email: z.string().min(2, { message: "Email is required" }).max(50),
+  email: z.string().min(2, { message: "Email is required." }).max(50),
   date: z.object({
     from: z.date({ required_error: "Error from" }).optional(),
     to: z.date({ required_error: "Error to" }).optional(),
   }),
+  numberOfPeople: z
+    .string()
+    .min(1, { message: "Number of people is required." })
+    .max(50),
+  occasion: z.string().min(2, { message: "Type of occasion is required." }),
   message: z.string().min(2, { message: "Message is required." }),
 });
 export const ContactForm = () => {
@@ -39,6 +52,8 @@ export const ContactForm = () => {
     defaultValues: {
       name: "",
       email: "",
+      numberOfPeople: "0",
+      occasion: "",
       date: {
         from: undefined,
         to: undefined,
@@ -46,6 +61,7 @@ export const ContactForm = () => {
       message: "",
     },
   });
+  const isSubmiting = form.formState.isSubmitting;
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
@@ -80,7 +96,7 @@ export const ContactForm = () => {
               <FormItem>
                 <FormLabel className="text-xl">Ime i Prezime</FormLabel>
                 <FormControl>
-                  <Input placeholder="Pero Perić" {...field} />
+                  <Input placeholder="Ime Prezime" {...field} />
                 </FormControl>
                 <FormDescription>Vaše Ime i Prezime</FormDescription>
                 <FormMessage />
@@ -96,7 +112,7 @@ export const ContactForm = () => {
                 <FormLabel className="text-xl">Email</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="pero.peric@gmail.com"
+                    placeholder="vaš.email@gmail.com"
                     type="email"
                     {...field}
                   />
@@ -108,6 +124,81 @@ export const ContactForm = () => {
               </FormItem>
             );
           }}
+        />
+        <FormField
+          control={form.control}
+          name="occasion"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-xl">Vrsta Eventa</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Odaberite vrstu prigode" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="Proslave i Eventi">
+                    Proslave i Eventi
+                  </SelectItem>
+                  <SelectItem value="Vikend getaway za obitelj i prijatelje">
+                    Vikend getaway za obitelj i prijatelje
+                  </SelectItem>
+                  <SelectItem value="Djevojačke zabave">
+                    Djevojačke zabave
+                  </SelectItem>
+                  <SelectItem value="U poruci opis">
+                    Napišem u poruci
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+              <FormDescription>
+                Vrsta eventa, u slučaju da je nešto drugo napišite u poruci
+                ispod. ispod.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="numberOfPeople"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-xl">Broj Osoba</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Odaberite broj osoba" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="1">1</SelectItem>
+                  <SelectItem value="2">2</SelectItem>
+                  <SelectItem value="3">3</SelectItem>
+                  <SelectItem value="4">4</SelectItem>
+                  <SelectItem value="5">5</SelectItem>
+                  <SelectItem value="6">6</SelectItem>
+                  <SelectItem value="7">7</SelectItem>
+                  <SelectItem value="8">8</SelectItem>
+                  <SelectItem value="9">9</SelectItem>
+                  <SelectItem value="10">10</SelectItem>
+                  <SelectItem value="11">11</SelectItem>
+                  <SelectItem value="12">12</SelectItem>
+                  <SelectItem value="13">13</SelectItem>
+                  <SelectItem value="14">14</SelectItem>
+                  <SelectItem value="15">15</SelectItem>
+                  <SelectItem value="16">16</SelectItem>
+                  <SelectItem value="17">17</SelectItem>
+                  <SelectItem value="18">18</SelectItem>
+                  <SelectItem value="19">19</SelectItem>
+                  <SelectItem value="20+">20+</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormDescription>Broj osoba</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
         />
         <FormField
           control={form.control}
@@ -157,7 +248,7 @@ export const ContactForm = () => {
                 </PopoverContent>
               </Popover>
               <FormDescription>
-                Odaberite datum ili raspon dana zeljene rezervacije.
+                Odaberite datum ili raspon dana željene rezervacije.
               </FormDescription>
               <FormDescription>
                 Ostavite prazno ako samo informativno kontaktirate.
@@ -176,6 +267,7 @@ export const ContactForm = () => {
                 <Textarea
                   placeholder="Vaša Poruka"
                   className="resize-none"
+                  rows={6}
                   {...field}
                 />
               </FormControl>
@@ -184,7 +276,11 @@ export const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        {isSubmiting ? (
+          <SubmitingAnimation />
+        ) : (
+          <Button type="submit">Submit</Button>
+        )}
       </form>
     </Form>
   );
