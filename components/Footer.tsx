@@ -1,11 +1,14 @@
+"use client";
 import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { SocialIcon } from "./ui/social-icon";
 import { FOOTER_SOCIAL_ICONS, NAV_PATHS } from "@/static";
+import { useLocale } from "next-intl";
 //TODO srediti linkove leagal, dodati intl
 export const Footer = () => {
+  const localLang = useLocale();
   return (
     <footer className="max-md:bg-slate-100/40  bg-white dark:bg-gray-900 z-priority">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -31,7 +34,7 @@ export const Footer = () => {
                   return (
                     <li className="mb-4" key={item.id}>
                       <Link
-                        href={item.path}
+                        href={`/${localLang}/${item.path}`}
                         className="hover:text-accent capitalize"
                       >
                         {item.label}
